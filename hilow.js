@@ -1,6 +1,5 @@
-// Hi-Low Game v0.1
+// Hi-Low Game v0.2
 //
-var summe = 0;
 var rnd = 0;
 var kto = 1000;
 var einsatz = 10;
@@ -13,16 +12,23 @@ var btnDurch2 = document.getElementById('btnEinsatzDurch2');
 var txtKto = document.getElementById('txtKto');
 var txtEinsatz = document.getElementById('txtEinsatz');
 
+// Buttons funktionen zuordnen.
 btn1.addEventListener('click', btn1Click);
 btn2.addEventListener('click', btn2Click);
 btnMal2.addEventListener('click',btnMal2Click);
 btnDurch2.addEventListener('click',btnDurch2Click);
+
+// Werte ausgeben.
+txtEinsatz.textContent = 'Einsatz: '+einsatz;
+txtKto.textContent = 'Konto: '+kto;
 
 function btnMal2Click() {
   einsatz *= 2;
   txtEinsatz.textContent = 'Einsatz: '+einsatz;
 }
 function btnDurch2Click() {
+  if (einsatz <=5) 
+    return;
   einsatz /= 2;
   txtEinsatz.textContent = 'Einsatz: '+einsatz;
 }
